@@ -8,6 +8,8 @@ authors = ["litovsky <berpress@gmail.com>"]
 python = "3.6"
 selenium = "^3.141.0"
 flake8 = "^3.7.9"
+pytest = "^5.4.1"
+webdriver_manager = "^2.3.0"
 
 [tool.poetry.dev-dependencies]
 
