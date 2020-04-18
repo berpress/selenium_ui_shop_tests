@@ -22,7 +22,7 @@ class LoginPage:
     def submit_login(self):
         return self.app.wd.find_element(*Authorization.SUBMIT_BUTTON)
 
-    def authorization(self, user: UserData, submit=True):
+    def authentication(self, user: UserData, submit=True):
         logger.info(f'Try to login with login: {user.login} and password: '
                     f'{user.password}')
         self.login_button().click()
@@ -30,3 +30,6 @@ class LoginPage:
         self.password_input().send_keys(user.password)
         if submit:
             self.submit_login().click()
+
+    def error_auth_text(self):
+        return self.app.wd.find_element(*Authorization.ERROR_AUTH_TEXT).text

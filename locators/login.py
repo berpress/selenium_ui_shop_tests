@@ -6,3 +6,4 @@ class Authorization:
     LOGIN_INPUT = (By.ID, 'email')
     PASSWORD_INPUT = (By.ID, 'passwd')
     SUBMIT_BUTTON = (By.ID, 'SubmitLogin')
+    ERROR_AUTH_TEXT = (By.XPATH, '//*[@class="alert alert-danger"]')
