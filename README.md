@@ -1,3 +1,4 @@
+[![Build Status](https://travis-ci.org/berpress/shop_test.svg?branch=master)](https://travis-ci.org/berpress/shop_test)
 # Shop test
 UI python tests with selenium http://automationpractice.com/
 

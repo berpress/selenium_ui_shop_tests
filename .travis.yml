@@ -1,6 +1,9 @@
 language: python
 python: 3.6
 
+addons:
+  chrome: stable
+
 install: make
 
 before_install:
@@ -11,3 +14,4 @@ install:
 
 script:
   - make lint
+  - make pytest
