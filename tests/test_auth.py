@@ -1,5 +1,3 @@
-import pytest
-
 from model.login import UserData
 
 
@@ -15,5 +13,5 @@ def test_auth_shop(app):
                          password='Password11')
     app.login.authorization(user_data)
     assert app.page.login_name_text() == 'Biil Novikov', 'Check name after ' \
-                                                    'authorization'
+                                                         'authorization'
     app.page.logout_btn()
