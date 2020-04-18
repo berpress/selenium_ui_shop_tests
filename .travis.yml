@@ -6,11 +6,11 @@ addons:
 
 install: make
 
-before_install:
-  - pip install poetry
+#before_install:
+#  - pip install poetry
 
 install:
-  - poetry install
+  - pip install -r requirements.txt
 
 script:
   - make lint
