@@ -4,6 +4,8 @@ from selenium.webdriver.chrome.options import Options
 import logging
 
 from common.logging import setup
+from fixture.login_page import LoginPage
+
 logger = logging.getLogger()
 
 
@@ -15,6 +17,7 @@ class Application:
         options.headless = False
         driver = ChromeDriverManager().install()
         self.wd = webdriver.Chrome(driver, options=options)
+        self.login = LoginPage(self)
         self.base_url = base_url
 
     def open_main_page(self):
