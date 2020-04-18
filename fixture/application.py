@@ -5,6 +5,7 @@ import logging
 
 from common.logging import setup
 from fixture.login_page import LoginPage
+from fixture.main_page import MainPage
 
 logger = logging.getLogger()
 
@@ -18,6 +19,7 @@ class Application:
         driver = ChromeDriverManager().install()
         self.wd = webdriver.Chrome(driver, options=options)
         self.login = LoginPage(self)
+        self.page = MainPage(self)
         self.base_url = base_url
 
     def open_main_page(self):

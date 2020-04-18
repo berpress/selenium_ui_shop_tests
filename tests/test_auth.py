@@ -1,5 +1,7 @@
 import pytest
 
+from model.login import UserData
+
 
 def test_auth_shop(app):
     """
@@ -9,6 +11,9 @@ def test_auth_shop(app):
     4. Check name
     """
     app.open_main_page()
-    app.login.authorization(login='fobiw39468@homedepinst.com',
-                            password='Password11')
-    pass
+    user_data = UserData(login='fobiw39468@homedepinst.com',
+                         password='Password11')
+    app.login.authorization(user_data)
+    assert app.page.login_name_text() == 'Biil Novikov', 'Check name after ' \
+                                                    'authorization'
+    app.page.logout_btn()

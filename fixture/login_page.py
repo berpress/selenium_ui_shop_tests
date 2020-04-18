@@ -1,6 +1,7 @@
 import logging
 
 from locators.login import Authorization
+from model.login import UserData
 
 logger = logging.getLogger()
 
@@ -21,11 +22,11 @@ class LoginPage:
     def submit_login(self):
         return self.app.wd.find_element(*Authorization.SUBMIT_BUTTON)
 
-    def authorization(self, login, password, submit=True):
-        logger.info(f'Try to login with login: {login} and password: '
-                    f'{password}')
+    def authorization(self, user: UserData, submit=True):
+        logger.info(f'Try to login with login: {user.login} and password: '
+                    f'{user.password}')
         self.login_button().click()
-        self.login_input().send_keys(login)
-        self.password_input().send_keys(password)
+        self.login_input().send_keys(user.login)
+        self.password_input().send_keys(user.password)
         if submit:
             self.submit_login().click()
