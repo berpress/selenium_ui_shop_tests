@@ -1,7 +1,9 @@
  
 import pytest
-from webdriver_manager.chrome import ChromeDriverManager
 from fixture.application import Application
+import logging
+
+logger = logging.getLogger()
 
 
 @pytest.fixture(scope="session")
@@ -19,5 +21,5 @@ def pytest_addoption(parser):
         "--base_url",
         action="store",
         default="http://automationpractice.com/",
-        help="base_url",
+        help="enter base_url",
     )
