@@ -1,4 +1,7 @@
 import logging
+from selenium.webdriver.support import expected_conditions as EC
+
+from selenium.webdriver.support.wait import WebDriverWait
 
 from locators.login import Authorization
 from model.login import UserData
@@ -14,7 +17,12 @@ class LoginPage:
         return self.app.wd.find_element(*Authorization.PASSWORD_INPUT)
 
     def _login_input(self):
-        return self.app.wd.find_element(*Authorization.LOGIN_INPUT)
+        element = (
+            WebDriverWait(self.app.wd, 10).until(
+                EC.presence_of_element_located(
+                    Authorization.LOGIN_INPUT))
+        )
+        return element
 
     def _login_button(self):
         return self.app.wd.find_element(*Authorization.LOGIN_BUTTON)

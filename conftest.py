@@ -11,7 +11,6 @@ def app(request):
     base_url = request.config.getoption("--base-url")
     fixture = Application(base_url)
     fixture.wd.maximize_window()
-    fixture.wd.implicitly_wait(10)
     yield fixture
     fixture.destroy()
 
