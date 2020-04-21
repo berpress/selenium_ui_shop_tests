@@ -29,3 +29,6 @@ class Application:
     def destroy(self):
         logger.info('Quit app')
         self.wd.quit()
+
+    def get_url(self):
+        return self.wd.current_url

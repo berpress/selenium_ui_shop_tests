@@ -5,3 +5,7 @@ class Authentication:
     LOGIN_FORM = 'ALREADY REGISTERED?'
     LOGIN_HELPERS = ['Email address', 'Email address', 'Password',
                      'Forgot your password?']
+
+
+class Users:
+    user = 'Biil Novikov'

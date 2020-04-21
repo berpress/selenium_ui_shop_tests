@@ -1,6 +1,6 @@
 import pytest
 from model.login import UserData
-from common.constans import Authentication
+from common.constans import Authentication, Users
 
 
 def test_auth_shop(app):
@@ -14,8 +14,8 @@ def test_auth_shop(app):
     user_data = UserData(login='fobiw39468@homedepinst.com',
                          password='Password11')
     app.login.authentication(user_data)
-    assert app.page.login_name_text() == 'Biil Novikov', 'Check name after ' \
-                                                         'authorization'
+    assert app.page.login_name_text() == Users.user, \
+        'Check name after authorization'
     app.page.logout_user()
 
 

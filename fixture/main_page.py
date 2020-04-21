@@ -20,3 +20,7 @@ class MainPage:
 
     def logout_user(self):
         self.logout_btn().click()
+
+    def check_auth(self):
+        elements = self.app.wd.find_elements(*Page.LOGIN_NAME)
+        return len(elements)
