@@ -1,5 +1,31 @@
 [[package]]
 category = "main"
+description = "Allure pytest integration"
+name = "allure-pytest"
+optional = false
+python-versions = "*"
+version = "2.8.13"
+
+[package.dependencies]
+allure-python-commons = "2.8.13"
+pytest = ">=4.5.0"
+six = ">=1.9.0"
+
+[[package]]
+category = "main"
+description = "Common module for integrate allure with python-based frameworks"
+name = "allure-python-commons"
+optional = false
+python-versions = "*"
+version = "2.8.13"
+
+[package.dependencies]
+attrs = ">=16.0.0"
+pluggy = ">=0.4.0"
+six = ">=1.9.0"
+
+[[package]]
+category = "main"
 description = "Atomic file writes."
 marker = "sys_platform == \"win32\""
 name = "atomicwrites"
@@ -332,10 +358,18 @@ docs = ["sphinx", "jaraco.packaging (>=3.2)", "rst.linker (>=1.9)"]
 testing = ["jaraco.itertools", "func-timeout"]
 
 [metadata]
-content-hash = "7a681b16ee25a9bbd711b99d1e214b7d662f68ade263a0acddc3689eca152f03"
+content-hash = "8e1861d7f8b18d7ea59f6f3da6f7ec04dee9bccd8b395caa27a39cceeeab5972"
 python-versions = "3.6"
 
 [metadata.files]
+allure-pytest = [
+    {file = "allure-pytest-2.8.13.tar.gz", hash = "sha256:a1ec913ff050e1a4ab936be8ee9bcd0cfada43c3b2b3dbbc11fdf892bc3b1e99"},
+    {file = "allure_pytest-2.8.13-py3-none-any.whl", hash = "sha256:376311bfb9220316daa74dae0f149d5729ca2e1f7779960847636584747f71f2"},
+]
+allure-python-commons = [
+    {file = "allure-python-commons-2.8.13.tar.gz", hash = "sha256:a500257843076eccad94e88ca8333c23fd8bd592ac8adaab5e191c5949d78370"},
+    {file = "allure_python_commons-2.8.13-py3-none-any.whl", hash = "sha256:e2a6924904ae9f2cb3588bb6ff93cc4e64d88f4bbb8a373829f30a81c59e2390"},
+]
 atomicwrites = [
     {file = "atomicwrites-1.3.0-py2.py3-none-any.whl", hash = "sha256:03472c30eb2c5d1ba9227e4c2ca66ab8287fbfbbda3888aa93dc2e28fc6811b4"},
     {file = "atomicwrites-1.3.0.tar.gz", hash = "sha256:75a9445bac02d8d058d5e1fe689654ba5a6556a1dfd8ce6ec55a0ed79866cfa6"},

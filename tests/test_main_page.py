@@ -1,6 +1,8 @@
+import allure
 from common.constans import PrintedDress, PrintedSummerDress, Colors
 
 
+@allure.step('Product Card')
 def test_open_product_card(app, login):
     """
         1. Open page
@@ -16,6 +18,7 @@ def test_open_product_card(app, login):
     assert app.page.product_price() == PrintedDress.price
 
 
+@allure.step('Color Test')
 def test_color_dress(app, login):
     """
         1. Open page

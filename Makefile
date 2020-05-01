@@ -3,3 +3,6 @@ lint:
 
 pytest:
 	@pytest -s -v
+
+allure:
+	@pytest --alluredir=/tmp/my_allure_results -s -v

@@ -1,3 +1,4 @@
+import os
 import time
 
 from selenium import webdriver
@@ -19,6 +20,7 @@ class Application:
         options: Options = Options()
         options.headless = True
         driver = ChromeDriverManager().install()
+        self.create_dir_for_report()
         self.wd = webdriver.Chrome(driver, options=options)
         self.login = LoginPage(self)
         self.page = MainPage(self)
@@ -48,3 +50,9 @@ class Application:
             time.sleep(0.5)
         logger.info(f"Error, page {self.get_url()} isn't load")
         return False
+
+    @staticmethod
+    def create_dir_for_report(dir_name='../report'):
+        if not os.path.exists(dir_name):
+            logger.info(f'Create dir {dir_name}')
+            os.makedirs(dir_name)
