@@ -1,3 +1,5 @@
+import time
+
 from selenium import webdriver
 from webdriver_manager.chrome import ChromeDriverManager
 from selenium.webdriver.chrome.options import Options
@@ -32,3 +34,17 @@ class Application:
 
     def get_url(self):
         return self.wd.current_url
+
+    def page_has_loaded(self, wait_time=5) -> bool:
+        """
+        Waiting for the page to load.
+        """
+        timestamp = time.time() + wait_time
+        while time.time() < timestamp:
+            page_state = self.wd.execute_script('return document.readyState;')
+            if page_state == 'complete':
+                logger.info(f'Page {self.get_url()} is load')
+                return True
+            time.sleep(0.5)
+        logger.info(f"Error, page {self.get_url()} isn't load")
+        return False
