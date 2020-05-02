@@ -1,4 +1,4 @@
- 
+import allure
 import pytest
 from fixture.application import Application
 import logging
@@ -55,3 +55,13 @@ def login(app, request):
         password = request.config.getoption("--password")
         user_data = UserData(login=login, password=password)
         app.login.authentication(user_data)
+
+
+@pytest.fixture(scope="function", autouse=True)
+def screenshot_after_test(app):
+    yield
+    allure.attach(
+        app.wd.get_screenshot_as_png(),
+        name='screenshot',
+        attachment_type=allure.attachment_type.PNG
+    )
