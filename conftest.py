@@ -11,7 +11,8 @@ logger = logging.getLogger()
 @pytest.fixture(scope="session")
 def app(request):
     base_url = request.config.getoption("--base-url")
-    fixture = Application(base_url)
+    allure_dir = request.config.getoption("--report-folder")
+    fixture = Application(base_url, allure_dir)
     fixture.wd.implicitly_wait(10)
     fixture.wd.maximize_window()
     yield fixture
@@ -36,6 +37,12 @@ def pytest_addoption(parser):
         action="store",
         default="Password11",
         help="enter password",
+    ),
+    parser.addoption(
+        "--report-folder",
+        action="store",
+        default="/tmp/allure_results",
+        help="enter path to allure dir",
     ),
 
 

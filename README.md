@@ -2,6 +2,7 @@
 # Shop test
 UI python tests with selenium http://automationpractice.com/
 
+This is a test test project for training.
 
 
 ### How to start
@@ -12,6 +13,7 @@ UI python tests with selenium http://automationpractice.com/
     pip install -r requirements.txt
     ```
 4. Run tests from the folder **tests**
+5. For report used Allure http://allure.qatools.ru/
 
 
 ### Login Information

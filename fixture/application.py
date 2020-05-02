@@ -14,13 +14,13 @@ logger = logging.getLogger()
 
 
 class Application:
-    def __init__(self, base_url):
+    def __init__(self, base_url, allure_dir):
         setup('INFO')
         logger.setLevel('INFO')
         options: Options = Options()
         options.headless = True
         driver = ChromeDriverManager().install()
-        self.create_dir_for_report()
+        self.create_dir_for_report(allure_dir)
         self.wd = webdriver.Chrome(driver, options=options)
         self.login = LoginPage(self)
         self.page = MainPage(self)
@@ -52,7 +52,7 @@ class Application:
         return False
 
     @staticmethod
-    def create_dir_for_report(dir_name='../report'):
+    def create_dir_for_report(dir_name):
         if not os.path.exists(dir_name):
             logger.info(f'Create dir {dir_name}')
             os.makedirs(dir_name)

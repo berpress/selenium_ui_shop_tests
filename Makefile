@@ -5,4 +5,4 @@ pytest:
 	@pytest -s -v
 
 allure:
-	@pytest --alluredir=/tmp/my_allure_results -s -v
+	@pytest --alluredir=/tmp/allure_results -s -v
