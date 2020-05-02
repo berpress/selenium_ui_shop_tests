@@ -2,7 +2,7 @@
 # Shop test
 UI python tests with selenium http://automationpractice.com/
 
-This is a test test project for training.
+This is a test project for training.
 
 
 ### How to start
