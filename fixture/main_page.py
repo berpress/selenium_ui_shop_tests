@@ -53,8 +53,6 @@ class MainPage:
                 action = ActionChains(self.app.wd)
                 action.move_to_element(p).click().perform()
                 Elements.try_to_click(p, Page.MORE_BUTTON)
-                # button_more = p.find_element(*Page.MORE_BUTTON)
-                # button_more.click()
                 logger.info(f'Open card by product name: {name}')
                 break
 
