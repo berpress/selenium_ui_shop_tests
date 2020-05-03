@@ -12,7 +12,7 @@ This is a test project for training.
     ```buildoutcfg
     pip install -r requirements.txt
     ```
-4. Run tests from the folder **tests**
+4. Run tests from the folder **tests** with pytest or use **make pytest**
 5. For report used Allure http://allure.qatools.ru/
 
 
