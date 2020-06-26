@@ -15,3 +15,6 @@ install:
 script:
   - make lint
   - make pytest
+  artifacts:
+    paths:
+      - reports.html
